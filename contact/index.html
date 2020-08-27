@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SpaceXLaunches - Contact</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="../assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="navigation-bar">
+    <ul>
+      <li><a href="../" class="navbar-title">SpaceXLaunches</a></li>
+      <div id="nav-links" class="float-right">
+        <li><a href="../">Home</a></li>
+        <li><a href="../launches/">Launches</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a href="../contact/" class="active">Contact</a></li>
+      </div>
+      <li><a class="menu-icon" onclick="toggleMobileNavbar()">
+        <i class="fa fa-bars"></i>
+      </a></li>
+    </ul>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a class="active" href="../">Home</a></li>
+      <li><a href="../launches/">Launches</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="../contact/">Contact</a></li>
+    </ul>
+  </div>
+
+  <br> <!-- DO NOT REMOVE, else the mobile navbar will appear under the top-divider element  -->
+  <div class="launch-divider"></div>
+  <a class="title-header-left" href="../"><- GO BACK TO PREVIOUS PAGE</a>
+  <br>
+  <br>
+  <div class="container" id="container">
+    <div class="card" id="">
+      <center>
+        <h1 id="">Contact SpaceXLaunches</h1>
+          <form id="contact" action="" method="post">
+            <fieldset>
+              <input placeholder="First name" type="text" required id="firstName">
+              <span class="error" id="firstNameError">This field cannot be blank</span>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Last name" type="text" required id="lastName">
+              <span class="error" id="lastNameError">This field cannot be blank</span>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Email" type="email" required id="email">
+              <span class="error" id="emailError">Please enter a correct email address</span>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Phone number" type="text"  required id="phone">
+              <span class="error" id="phoneError">Please enter a correct phone number</span>
+            </fieldset>
+            <fieldset>
+              <textarea placeholder="Message" type="text" rows="10" cols="1" required></textarea>
+            </fieldset>
+            <fieldset>
+              <br>
+              <a class="btn-blue-submit" name="submit" type="submit" id="submitContact">SUBMIT</a>
+              <!-- <button type="submit" id="submitContact" class="m-t-30">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button> -->
+            </fieldset>
+          </form>
+          </center>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../assets/js/contact.js"></script>
+</body>
+</html>
