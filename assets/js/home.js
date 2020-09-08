@@ -8,7 +8,7 @@ function getNextLaunch() {
       document.getElementById('next-launch-name').innerHTML = "NEXT LAUNCH: " + data.name + " - FLIGHT #" + data.flight_number;
 
       if (launchDate < todayDate) {
-        document.getElementById("next-launch-countdown").innerHTML = 'Date has passed.'
+        document.getElementById("next-launch-countdown").innerHTML = 'Date has passed'
       } else {
         
         setInterval(() => {
