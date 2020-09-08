@@ -39,22 +39,27 @@ fetch('https://api.spacexdata.com/v4/launches/' + id).then(response => {
     document.getElementById(data.flight_number).remove();
   }
 
-  // Get images and create element in HTML
-  data.links.flickr.original.forEach(image => {
-    // document.getElementById('images').insertAdjacentHTML('beforeend', '<li><img src="' + image + '" class="images-flickr" id="' + image + ' onclick="viewer.show()""></li>');
-    document.getElementById('images').insertAdjacentHTML('beforeend', '<img src="' + image + '" class="images-flickr" id="' + image + '">');
-    const viewer = new Viewer(document.getElementById('image'), {
-      inline: true,
-      viewed() {
-        viewer.zoomTo(1);
-      },
-    });
-  });
-  const gallery = new Viewer(document.getElementById('images'));      
+ 
 
   // Remove image div if no images found in API
   if (data.links.flickr.original.length === 0) {
-    document.getElementById('images').remove();
+    document.getElementById('image').remove();
+    console.log('NO IMAGES');
+    document.getElementById('images').innerHTML = 'No images available from API'
+    document.getElementById('images').style = 'color:#fff'
+  } else {
+    // Get images and create element in HTML
+    data.links.flickr.original.forEach(image => {
+      // document.getElementById('images').insertAdjacentHTML('beforeend', '<li><img src="' + image + '" class="images-flickr" id="' + image + ' onclick="viewer.show()""></li>');
+      document.getElementById('images').insertAdjacentHTML('beforeend', '<img src="' + image + '" class="images-flickr" id="' + image + '">');
+      const viewer = new Viewer(document.getElementById('image'), {
+        inline: true,
+        viewed() {
+          viewer.zoomTo(1);
+        },
+      });
+    });
+    const gallery = new Viewer(document.getElementById('images'));         
   }
 
   // LINKS
