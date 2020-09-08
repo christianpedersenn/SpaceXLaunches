@@ -7,32 +7,49 @@
   <title>SpaceXLaunches - Launches</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="../assets/css/argon-design-system.min.css" rel="stylesheet">
   <link href="../assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
 
-  <div class="navigation-bar">
-    <ul>
-      <li><a href="../" class="navbar-title">SpaceXLaunches</a></li>
-      <div id="nav-links" class="float-right">
-        <li><a href="../">Home</a></li>
-        <li><a href="../launches/" class="active">Launches</a></li>
-        <li><a href="../about/">About</a></li>
-        <!-- <li><a href="../contact/">Contact</a></li> -->
-      </div>
-      <li><a class="menu-icon" onclick="toggleMobileNavbar()">
-        <i class="fa fa-bars"></i>
-      </a></li>
-    </ul>
-  </div>
-  <div class="mobile-nav" id="mobile-nav">
-    <ul>
-      <li><a class="active" href="../">Home</a></li>
-      <li><a href="../launches/">Launches</a></li>
-      <li><a href="../about/">About</a></li>
-      <li><a href="../contact/">Contact</a></li>
-    </ul>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-default">
+    <div class="container">
+        <a class="navbar-brand" href="../">SpaceXLaunches</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-default">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand"> 
+                        <a href="index.html">
+                            <!-- <img src="assets/img/brand/blue.png"> -->
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                  <a class="" href="../">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../launches/" class="active">Launches</a>
+                </li>
+                <li class="nav-item">
+                  <a href="../about/">About</a>
+                </li>                
+            </ul>
+            
+        </div>
+    </div>
+</nav>
 
   <br> <!-- DO NOT REMOVE, else the mobile navbar will appear under the top-divider element  -->
   <div class="launch-divider"></div>

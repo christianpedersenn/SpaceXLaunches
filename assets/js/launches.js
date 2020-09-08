@@ -5,7 +5,7 @@ function getLatestLaunch() {
   // Convert ISO date to a more readable format
   var date = new Date(data.date_utc);
   convertedDate = date.toDateString()
-    document.getElementById('latest-launch').insertAdjacentHTML('beforeend', '<div class="card"><div style="overflow: left;"><img src="' + data.links.patch.small + '" class="launch-img"><h1>' + data.name + ' - FLIGHT #' + data.flight_number + '</h1><p>' + data.details + '</p><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data.flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br><a class="btn-blue-small" id="' + data.flight_number + '" href="../launch/?id=' + data.id + '">LEARN MORE</a></div></div></div></div>');
+    document.getElementById('latest-launch').insertAdjacentHTML('beforeend', '<div class="card" style="max-width:90%;margin-left:5%;"><div style="overflow: left;"><img src="' + data.links.patch.small + '" class="launch-img"><h1>' + data.name + ' - FLIGHT #' + data.flight_number + '</h1><p>' + data.details + '</p><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data.flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br><a class="btn-blue-small" id="' + data.flight_number + '" href="../launch/?id=' + data.id + '">LEARN MORE</a></div></div></div></div>');
     if (data.success === true) {
       document.getElementById('status-header' + data.flight_number).classList.add("status-header");
       document.getElementById('status-header' + data.flight_number).innerHTML = "SUCCESS"
@@ -32,7 +32,7 @@ function getLatestLaunch() {
       } else {
         patch = data[value].links.patch.small
       }
-      document.getElementById('past-launches').insertAdjacentHTML('afterend', '<div class="card" id="#' + data[value].flight_number + '"><div style="overflow: left;"><img src="' + patch + '" class="launch-img-small"><h1>' + data[value].name + ' - FLIGHT #' + data[value].flight_number + '</h1><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data[value].flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br><a class="btn-blue-small" id="' + data[value].flight_number + '" href="../launch/?id=' + data[value].id + '">LEARN MORE</a></div></div></div></div><br>');
+      document.getElementById('past-launches').insertAdjacentHTML('afterend', '<div class="card" style="max-width:90%;margin-left:5%;" id="#' + data[value].flight_number + '"><div style="overflow: left;"><img src="' + patch + '" class="launch-img-small"><h1>' + data[value].name + ' - FLIGHT #' + data[value].flight_number + '</h1><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data[value].flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br><a class="btn-blue-small" id="' + data[value].flight_number + '" href="../launch/?id=' + data[value].id + '">LEARN MORE</a></div></div></div></div><br>');
       if (data[value].success === true) {
         document.getElementById('status-header' + data[value].flight_number).classList.add("status-header");
         document.getElementById('status-header' + data[value].flight_number).innerHTML = "SUCCESS"

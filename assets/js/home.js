@@ -47,7 +47,7 @@ for (var value in data) {
   // Convert ISO date to a more readable format
   var date = new Date(data[value].date_utc);
   convertedDate = date.toDateString()
-    document.getElementById('upcoming-launches').insertAdjacentHTML('beforeend', '<div class="card" id="#' + data[value].flight_number + '"><div style="overflow: left;"><h1>' + data[value].name + ' - FLIGHT #' + data[value].flight_number + '</h1><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data[value].flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br></div></div></div></div><br>');
+    document.getElementById('upcoming-launches').insertAdjacentHTML('beforeend', '<div class="card" id="#' + data[value].flight_number + '"style="max-width:90%;margin-left:5%;"><div style="overflow: left;"><h1>' + data[value].name + ' - FLIGHT #' + data[value].flight_number + '</h1><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data[value].flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br></div></div></div></div><br>');
     if (data[value].success === true) {
       document.getElementById('status-header' + data[value].flight_number).classList.add("status-header");
       document.getElementById('status-header' + data[value].flight_number).innerHTML = "SUCCESS"

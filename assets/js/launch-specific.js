@@ -19,7 +19,7 @@ fetch('https://api.spacexdata.com/v4/launches/' + id).then(response => {
     patch = data.links.patch.small
   }
 
-  document.getElementById('specific-launch').insertAdjacentHTML('beforeend', '<div class="card"><div style="overflow: left;"><img src="' + patch + '" class="launch-img"><h1>' + data.name + ' - FLIGHT #' + data.flight_number + '</h1><p id="details">' + data.details + '</p><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data.flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br><a class="btn-blue-small" id="' + data.flight_number + '" href="' + data.links.presskit + '" target="_blank">DOWNLOAD PRESSKIT</a></div></div></div></div>');
+  document.getElementById('specific-launch').insertAdjacentHTML('beforeend', '<div class="card"><div style="overflow: left; max-width: 100% !important; margin-left:0px!important"><img src="' + patch + '" class="launch-img"><h1>' + data.name + ' - FLIGHT #' + data.flight_number + '</h1><p id="details">' + data.details + '</p><br><div class="card-container"><div class="left"><p class="">LAUNCH STATUS: <span id="status-header' + data.flight_number + '"></span></p><p>LAUNCH DATE: <span>' + convertedDate + '</span></p></div><div class="right"><br><a class="btn-blue-small" id="' + data.flight_number + '" href="' + data.links.presskit + '" target="_blank">DOWNLOAD PRESSKIT</a></div></div></div></div>');
 
 
   // As the API only provides some information, a lot of earlier launches doesn't include images + some other information.
@@ -75,36 +75,36 @@ fetch('https://api.spacexdata.com/v4/launches/' + id).then(response => {
     // Do nothing
   } else {
     links_node.appendChild(links_article_node)
-    links_article_node.innerHTML = '<a href="' + data.links.article + '" id="' + data.links.article + '" target="_blank" class="link">Article (' + data.links.article + ')<a/>'
+    links_article_node.innerHTML = '<a href="' + data.links.article + '" id="' + data.links.article + '" target="_blank" class="link">Article (' + data.links.article + ')</a>'
     links_article_node.setAttribute('id', 'article')
   }
   if (data.links.reddit.campaign === null) {
     // Do nothing
   } else {
     links_node.appendChild(links_reddit_campaign_node)
-    links_reddit_campaign_node.innerHTML = '<a href="' + data.links.reddit.campaign + '"id="' + data.links.reddit.campaign + '" target="_blank" class="link">Reddit campaign (' + data.links.reddit.campaign + ')<a/>'
-    links_article_node.setAttribute('id', 'reddit_campaign')    
+    links_reddit_campaign_node.innerHTML = '<a href="' + data.links.reddit.campaign + '"id="' + data.links.reddit.campaign + '" target="_blank" class="link">Reddit campaign (' + data.links.reddit.campaign + ')</a>'
+    links_reddit_campaign_node.setAttribute('id', 'reddit_campaign')    
   }
   if (data.links.reddit.launch === null) {
     // Do nothing
   } else {
     links_node.appendChild(links_reddit_media_node)
-    links_reddit_media_node.innerHTML = '<a href="' + data.links.reddit.media + '" id="' + data.links.reddit.media + '" target="_blank" class="link">Reddit media (' + data.links.reddit.media + ')<a/>'
-    links_article_node.setAttribute('id', 'reddit_media')
+    links_reddit_media_node.innerHTML = '<a href="' + data.links.reddit.media + '" id="' + data.links.reddit.media + '" target="_blank" class="link">Reddit media (' + data.links.reddit.media + ')</a>'
+    links_reddit_media_node.setAttribute('id', 'reddit_media')
   } 
   if (data.links.reddit.media === null) {
     // Do nothing
   } else {
     links_node.appendChild(links_reddit_launch_node)
-    links_reddit_launch_node.innerHTML = '<a href="' + data.links.reddit.launch + '" id="' + data.links.reddit.launch + '" target="_blank" class="link">Reddit launch (' + data.links.reddit.launch + ')<a/>'
-    links_article_node.setAttribute('id', 'reddit_launch')  
+    links_reddit_launch_node.innerHTML = '<a href="' + data.links.reddit.launch + '" id="' + data.links.reddit.launch + '" target="_blank" class="link">Reddit launch (' + data.links.reddit.launch + ')</a>'
+    links_reddit_launch_node.setAttribute('id', 'reddit_launch')  
   } 
   if (data.links.video_link === null) {
     // Do nothing
   } else {
     links_node.appendChild(links_youtube_node)
-    links_youtube_node.innerHTML = '<a href=https://www.youtube.com/watch?v=' + data.links.youtube_id + 'id=' + data.links.youtube_id + '" target="_blank" class="link">Youtube (https://www.youtube.com/watch?v=' + data.links.youtube_id + ')<a/>'
-    links_article_node.setAttribute('id', 'youtube_id')
+    links_youtube_node.innerHTML = '<a href=https://www.youtube.com/watch?v=' + data.links.youtube_id + 'id=' + data.links.youtube_id + '" target="_blank" class="link">Youtube (https://www.youtube.com/watch?v=' + data.links.youtube_id + ')</a>'
+    links_youtube_node.setAttribute('id', 'youtube_id')
   } 
   if (data.links.wikipedia === null) {
     // Do nothing
