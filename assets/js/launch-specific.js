@@ -71,22 +71,22 @@ fetch('https://api.spacexdata.com/v4/launches/' + id).then(response => {
   let links_wikipedia_node = document.createElement('li')
 
   links_node.appendChild(links_article_node)
-  links_article_node.innerHTML = '<a href=' + data.links.article + 'id=' + data.links.article + ' target="_blank" class="link">Article (' + data.links.article + ')<a/>'
+  links_article_node.innerHTML = '<a href="' + data.links.article + '" id="' + data.links.article + '" target="_blank" class="link">Article (' + data.links.article + ')<a/>'
 
   links_node.appendChild(links_reddit_campaign_node)
-  links_reddit_campaign_node.innerHTML = '<a href=' + data.links.reddit.campaign + 'id=' + data.links.reddit.campaign + ' target="_blank" class="link">Reddit campaign (' + data.links.reddit.campaign + ')<a/>'
+  links_reddit_campaign_node.innerHTML = '<a href="' + data.links.reddit.campaign + '"id="' + data.links.reddit.campaign + '" target="_blank" class="link">Reddit campaign (' + data.links.reddit.campaign + ')<a/>'
 
   links_node.appendChild(links_reddit_media_node)
-  links_reddit_media_node.innerHTML = '<a href=' + data.links.reddit.media + 'id=' + data.links.reddit.media + ' target="_blank" class="link">Reddit media (' + data.links.reddit.media + ')<a/>'
+  links_reddit_media_node.innerHTML = '<a href="' + data.links.reddit.media + '" id="' + data.links.reddit.media + '" target="_blank" class="link">Reddit media (' + data.links.reddit.media + ')<a/>'
 
   links_node.appendChild(links_reddit_launch_node)
-  links_reddit_launch_node.innerHTML = '<a href=' + data.links.reddit.launch + 'id=' + data.links.reddit.launch + ' target="_blank" class="link">Reddit launch (' + data.links.reddit.launch + ')<a/>'
+  links_reddit_launch_node.innerHTML = '<a href="' + data.links.reddit.launch + '" id="' + data.links.reddit.launch + '" target="_blank" class="link">Reddit launch (' + data.links.reddit.launch + ')<a/>'
 
   links_node.appendChild(links_youtube_node)
-  links_youtube_node.innerHTML = '<a href=https://www.youtube.com/watch?v=' + data.links.youtube_id + 'id=' + data.links.youtube_id + ' target="_blank" class="link">Youtube (https://www.youtube.com/watch?v=' + data.links.youtube_id + ')<a/>'
+  links_youtube_node.innerHTML = '<a href=https://www.youtube.com/watch?v=' + data.links.youtube_id + 'id=' + data.links.youtube_id + '" target="_blank" class="link">Youtube (https://www.youtube.com/watch?v=' + data.links.youtube_id + ')<a/>'
 
   links_node.appendChild(links_wikipedia_node)
-  links_wikipedia_node.innerHTML = '<a href=' + data.links.wikipedia + 'id=' + data.links.wikipedia + ' target="_blank" class="link">Wikipedia (' + data.links.wikipedia + ')<a/>'
+  links_wikipedia_node.innerHTML = '<a href="' + data.links.wikipedia + '" id="' + data.links.wikipedia + '" target="_blank" class="link">Wikipedia (' + data.links.wikipedia + ')<a/>'
 
 
   // Remove if elements return null from API

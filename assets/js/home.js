@@ -4,17 +4,28 @@ function getNextLaunch() {
   }).then(data => {
       //https://www.w3schools.com/howto/howto_js_countdown.asp
       var launchDate = new Date(data.date_utc).getTime();
+      var todayDate = new Date().getTime();
       document.getElementById('next-launch-name').innerHTML = "NEXT LAUNCH: " + data.name + " - FLIGHT #" + data.flight_number;
-      setInterval(() => {
-        document.getElementById("next-launch-countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        var now = new Date().getTime();
-        var distance = launchDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("next-launch-countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      }, 1000);
+
+      if (launchDate < todayDate) {
+        document.getElementById("next-launch-countdown").innerHTML = 'Date has passed.'
+      } else {
+        
+        setInterval(() => {
+          document.getElementById("next-launch-countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+          var now = new Date().getTime();
+          var distance = launchDate - now;
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("next-launch-countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+          console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+          // console.log(data.date_utc);
+          console.log(launchDate);
+          console.log(todayDate);
+        }, 1000);
+      }
   }).catch(err => {
     document.getElementById('result').innerHTML = 'Couldnt fetch JSON .. Check console for more information.'
     console.log(err);
